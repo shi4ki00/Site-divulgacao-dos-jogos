@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   padding: 0;
@@ -384,14 +385,19 @@ body {
   justify-content: space-between;
   padding: 0 10%;
   box-shadow: 0 0 15px rgba(0, 255, 85, 0.3);
+
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .menu a {
   color: white;
   font-size: 20px;
-  font-weight: bold;
   text-decoration: underline;
   transition: color 0.2s;
+
+  text-decoration: none;
 }
 
 .menu a:hover {
@@ -497,12 +503,16 @@ body {
   height: auto;
 }
 
+.footer-links{
+  font-family: 'Archivo Black', sans-serif;
+  width: 300px;
+}
+
 .footer-links h3 {
   color: #ffffff;
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 20px;
-  font-family: 'Archivo Black', sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -512,10 +522,17 @@ body {
 
 .footer-links ul li {
   margin-bottom: 12px;
+  
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .footer-links ul li a {
-  color: #e9d5ff;
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 26px;
   transition: color 0.2s ease;

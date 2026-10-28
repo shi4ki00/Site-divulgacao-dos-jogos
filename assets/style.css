@@ -171,6 +171,8 @@ body {
   position: relative;
   width: fit-content;
   display: inline-block;
+
+  margin-left: 50px;
 }
 
 .imagem_tv_moldura {
@@ -202,19 +204,14 @@ body {
 }
 
 .item_jogo_lateral {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-
-  font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 14px;
-  font-style: normal;
-
-  width: 360px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    font-family: "Pixelify Sans", sans-serif;
+    width: 580px;
 }
 
 #coisas_menores_1 {
@@ -225,13 +222,54 @@ body {
   color: #2e7d32;
 }
 
-.miniatura_jogo {
-  width: 100px;
-  height: 100px;
-  background-color: #333;
-  border: 2px solid #555;
-  border-radius: 4px;
+.tamanho_disco {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
 
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    animation: girarDisco 9s linear infinite;
+}
+
+@keyframes girarDisco {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.miniatura_jogo {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+}
+
+.tamanho_disco {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#elipse_preta {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .coluna_direita {

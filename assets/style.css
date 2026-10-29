@@ -60,7 +60,7 @@ body {
 .div_secundaria {
   background-image: url('img/fundo_div_secundaria.png');
   width: 100%;
-  height: 900px;
+  height: 800px;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -226,23 +226,26 @@ body {
     width: 130px;
     height: 130px;
     object-fit: cover;
-
     position: absolute;
     left: 0;
     top: 0;
+}
 
-    animation: girarDisco 9s linear infinite;
+.tamanho_disco.girando {
+    animation: girarDisco 3s linear infinite;
 }
 
 @keyframes girarDisco {
     from {
-        transform: rotate(0deg);
+        transform: rotate(var(--rotacao-inicial, 0deg));
     }
 
     to {
-        transform: rotate(360deg);
+        transform: rotate(calc(var(--rotacao-inicial, 0deg) + 360deg));
     }
 }
+
+
 
 .miniatura_jogo {
     position: relative;
@@ -516,7 +519,7 @@ body {
 .footer-container {
   background: linear-gradient(#60038E, #813D9E, #713494, #60038E);
   width: 100%;
-  padding: 60px 80px 30px 80px;
+  padding: 60px 40px 30px 40px;
   border-top: 2px solid rgba(0, 255, 85, 0.2);
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -543,12 +546,12 @@ body {
 
 .footer-links{
   font-family: 'Archivo Black', sans-serif;
-  width: 300px;
+  width: 250px;
 }
 
 .footer-links h3 {
   color: #ffffff;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
   letter-spacing: 0.5px;
@@ -561,9 +564,9 @@ body {
 .footer-links ul li {
   margin-bottom: 12px;
   
-  font-family: "Archivo Black", sans-serif;
+  font-family: "Archivo", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
@@ -572,7 +575,7 @@ body {
 .footer-links ul li a{
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 28px;
   transition: color 0.2s ease;
 }
 
@@ -582,7 +585,7 @@ body {
 .footer-localizacao a {
   color: #FFFFFF;
   text-decoration: none;
-  font-family: "Archivo Black", sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 30px;
   line-height: 1.4;
 }

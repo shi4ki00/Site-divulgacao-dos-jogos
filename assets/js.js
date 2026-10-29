@@ -150,4 +150,49 @@ document.addEventListener('DOMContentLoaded', () => {
       mudarTitulo();
     });
   });
+    
+    const itensLaterais = document.querySelectorAll('.item_jogo_lateral');
+
+  itensLaterais.forEach((item) => {
+    const disco = item.querySelector('.tamanho_disco');
+
+    if (!disco) return;
+
+    let animacao = null;
+    let angulo = 0;
+
+    item.addEventListener('mouseenter', () => {
+      if (animacao) return;
+
+      animacao = disco.animate(
+        [
+          { transform: `rotate(${angulo}deg)` },
+          { transform: `rotate(${angulo + 360}deg)` }
+        ],
+        {
+          duration: 3000,
+          iterations: Infinity,
+          easing: 'linear'
+        }
+      );
+    });
+
+    item.addEventListener('mouseleave', () => {
+      if (!animacao) return;
+
+      const estilo = window.getComputedStyle(disco);
+      const matriz = new DOMMatrixReadOnly(estilo.transform);
+
+      angulo = Math.atan2(matriz.b, matriz.a) * (180 / Math.PI);
+
+      if (angulo < 0) angulo += 360;
+
+      animacao.cancel();
+      disco.style.transform = `rotate(${angulo}deg)`;
+      animacao = null;
+    });
+  });
+
+
 });
+

@@ -1,0 +1,630 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.6)), url(img/Imagem_fundo_tela_principal.png);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.div_principal {
+  width: 100%;
+  height: 1040px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.div_principal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 100%;
+  z-index: -1;
+}
+
+
+
+
+.imagem_tela_computador_principal {
+  width: 1132px;
+}
+
+.botao_tela_principal {
+  position: absolute;
+  justify-content: center;
+  margin-top: 340px;
+  margin-left: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.botao_tela_principal:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+.div_secundaria {
+  background-image: url('img/fundo_div_secundaria.png');
+  width: 100%;
+  height: 900px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 60px;
+}
+
+
+
+.botoes_div_secundaria {
+  height: 140px;
+  transition: background 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 40px;
+}
+
+.b_decoracao{
+  text-decoration: none;
+}
+
+.botoes_div_secundaria:hover {
+  background-image: linear-gradient(to bottom, #37D249, #002D05);
+}
+
+.botoes_div_secundaria a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.botoes_div_secundaria h1 {
+  color: white;
+
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 14px;
+  font-style: normal;
+  font-size: 60px;
+}
+
+
+
+.botao_voltar {
+  transition: transform 0.4s ease;
+  margin-left: 40px;
+
+  width: 268px;
+  height: 0px;
+}
+
+.botao_voltar:hover {
+  transform: scale(1.04);
+}
+
+.botao_voltar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.botao_voltar h1 {
+  background-image: linear-gradient(to bottom, #37D249, #002D05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  margin-top: 40px;
+
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+.div_jogo_detalhes {
+  background-image: url('img/fundo_div_secundaria.png');
+  width: 100%;
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Press Start 2P', monospace;
+  color: white;
+}
+
+.container_jogo {
+  display: flex;
+  gap: 40px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.coluna_esquerda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fotinha_do_jogo_tower-defense {
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+
+  margin-left: 50px;
+}
+
+.imagem_tv_moldura {
+  display: block;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+
+  width: 540px;
+}
+
+.imagem_jogo_tower-defense {
+  position: absolute;
+  top: 10%;
+  left: 9%;
+  width: 58%;
+  height: 68%;
+  object-fit: cover;
+  z-index: 2;
+  border-radius: 8px;
+}
+
+.lista_jogos_lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-left: 80px;
+}
+
+.item_jogo_lateral {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    font-family: "Pixelify Sans", sans-serif;
+    width: 580px;
+}
+
+#coisas_menores_1 {
+  width: 320px;
+}
+
+.item_jogo_lateral:hover h4 {
+  color: #2e7d32;
+}
+
+.tamanho_disco {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    animation: girarDisco 9s linear infinite;
+}
+
+@keyframes girarDisco {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.miniatura_jogo {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+}
+
+.tamanho_disco {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#elipse_preta {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.coluna_direita {
+  flex: 1.2;
+}
+
+.card_roxo {
+  background: linear-gradient(to bottom, #60038E, #813D9E, #713494, #60038E);
+  border-radius: 28px;
+  padding: 20px;
+
+  height: 86q0px;
+}
+
+.descricao_jogo p {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-align: justify;
+  height: 340px;
+  margin-right: 10px;
+}
+
+.scroll{
+  overflow-y: auto;  
+  margin-bottom: 10px;
+
+  scrollbar-width: thin; /* Pode ser 'auto', 'thin' ou 'none' */
+  scrollbar-color: #D2A8E6 #49016D; /* [cor da barra móvel] [cor do fundo] */
+}
+
+.secao_criadores h3 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #fff;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.criadores_grid {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.criador_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.foto_criador {
+  width: 120px;
+  
+}
+
+.foto_criador img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.criador_item p {
+  font-size: 30px;
+  color: #fff;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 14px;
+  font-style: normal;
+}
+
+.icone_github svg {
+  transition: transform 0.2s;
+}
+
+.icone_github:hover svg {
+  transform: scale(1.1);
+}
+
+.botao_download_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn_download {
+  display: inline-block;
+  background-color: #a5d6a7;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 4px solid #1b5e20;
+  box-shadow: inset 0 -4px 0 #66bb6a;
+  transition: transform 0.1s;
+}
+
+.btn_download:hover {
+  transform: scale(1.05);
+}
+
+
+/* Parte do Gabriel */
+
+.inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 720px;
+  background: linear-gradient(#60038E, #813D9E, #713494, #60038E);
+  border-radius: 0 0 65px 65px;
+
+  height: 720px; 
+  transition: height 0.4s ease, min-height 0.4s ease;
+}
+
+.inicio.inicio--reduzido {
+  height: 600px;
+  min-height: 600px;
+}
+
+#titulo,
+#titulo2,
+#descricao {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.cabecalho {
+  background: #000;
+  width: 80%;
+  margin: 0 auto;
+  padding: 4px;
+  border-radius: 40px;
+}
+
+.menu {
+  height: 68px;
+  border: 2px solid #14AE5C;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  box-shadow: 0 0 15px rgba(0, 255, 85, 0.3);
+
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menu a {
+  color: white;
+  font-size: 20px;
+  text-decoration: underline;
+  transition: color 0.2s;
+
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #14AE5C;
+}
+
+.logo {
+  color: #14AE5C;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  max-height: 85px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.cabecalho_conteudo {
+  text-align: center;
+  width: 100%;
+}
+
+.titulo_principal {
+  color: #FFFFFF;
+  font-family: 'Anton', sans-serif;
+  font-size: 80px;
+  margin-top: 20px;
+}
+
+.subtitulo_verde {
+  display: inline-block;
+  background: linear-gradient(180deg,rgba(55, 210, 73, 1) 45%, rgba(0, 45, 5, 1) 76%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: 'Micro 5', sans-serif;
+  font-size: 200px;
+  margin: 0;
+  line-height: 1;
+}
+
+.s1{
+  background: linear-gradient(180deg,rgba(55, 210, 73, 1) 59%, rgba(0, 45, 5, 1) 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;  
+}
+
+.titulo_jogo {
+  font-size: 210px;
+  padding: 20px 0;
+}
+
+.descricao {
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+  margin-top: 5px;
+  line-height: 1.15;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.footer-container {
+  background: linear-gradient(#60038E, #813D9E, #713494, #60038E);
+  width: 100%;
+  padding: 60px 80px 30px 80px;
+  border-top: 2px solid rgba(0, 255, 85, 0.2);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.footer-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo img {
+  max-width: 500px;
+  height: auto;
+}
+
+.footer-links{
+  font-family: 'Archivo Black', sans-serif;
+  width: 300px;
+}
+
+.footer-links h3 {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 12px;
+  
+  font-family: "Archivo Black", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.footer-links ul li a{
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 30px;
+  transition: color 0.2s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #14AE5C;
+}
+.footer-localizacao a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+  line-height: 1.4;
+}
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 30px 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+
+
+.social-item {
+  font-family: 'Archivo Black', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.social-item i {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.footer-bottom-text {
+  background: #3B0254;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
